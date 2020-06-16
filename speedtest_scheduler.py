@@ -10,7 +10,7 @@ def dl():
   cmd = 'speedtest | grep Download'
   speedtest = str(subprocess.check_output(cmd, shell=True))
   reg = re.compile('\d+.\d\d')
-  match  = reg.search('Download: 144.26 Mbit/s').group(0)
+  match  = reg.search(speedtest).group(0)
   return match
 
 def ul():
