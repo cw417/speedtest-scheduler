@@ -12,8 +12,10 @@ Scheduler for speedtest-cli
 
 ## About
 
-Uses `speedtest-cli` to test upload/download speed at set intervals.
-Records the data in a csv file.
+- Uses the `speedtest-cli` application to test upload and download speed
+  - `speedtest-cli` is a command line version of [speedtest.net](https://www.speedtest.net/apps/cli)
+- The interval between speedtests is set by the user
+- Data is written to `stats.csv`
 
 A good way to see if your ISP is throttling your connection.
 
@@ -60,11 +62,5 @@ A good way to see if your ISP is throttling your connection.
 
 #### Examples
 
-![running-program](./img/run0.png) ![running-program-2](./img/run2.png)
-  
-## How It Works
-
-- Uses the `speedtest-cli` application to test upload and download speed
-  - `speedtest-cli` is a command line version of [speedtest.net](https://www.speedtest.net/apps/cli)
-- The interval is set by the user
-- Data is written to `stats.csv`
+![running-program-2](./img/run2.png)
+![running-program](./img/run0.png)
