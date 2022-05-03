@@ -22,7 +22,10 @@ def run_speedtest():
   return [date, ul, dl]
 
 def write_csv_header():
-  """Writes header to csv file."""
+  """
+  Writes header to a new csv file.
+  Will overwrite path file if it exists.
+  """
   with open(path, 'w') as fp:
     fieldnames = ['date', 'download', 'upload']
     writer = csv.DictWriter(fp, fieldnames=fieldnames)
@@ -42,15 +45,18 @@ def set_schedule():
   2 = set time of day\n
   Defaults to 2 if anything other than 0 or 1 is entered.
   """
-  num = input("Select mode: 0 = every __ minutes; 1 = every hour; 2 (default) = set time of day:\n")
+  num = input("Select mode:\n0 = every __ minutes\n1 = every hour\n2 (default) = set time of day\n")
   if num == "0":
     set_time = int(input("How many minutes between runs?\n"))
+    print(f'Set to run every {set_time} minutes.')
     schedule.every(set_time).minutes.do(run)
   elif num == "1":
     schedule.every().hour.do(run)
+    print("Set to run once an hour.")
   else:
-    set_time = input("What time should the test run everyday?\n")
+    set_time = input("What time should the daily test run?\nPlease enter a time in the form of 00:00.\n")
     schedule.every().day.at(set_time).do(run)
+    print(f'Set to run at {set_time} every day.')
 
 def run():
   """Runs speedtest and appends data to csv file."""
@@ -59,10 +65,12 @@ def run():
 
 if __name__ == '__main__':
   set_schedule()
-  if not exists(path): # if csv file exists, prompt for overwrite
+  if exists(path): # if csv file exists, prompt for overwrite
     overwrite = input("Overwrite previous stats file? (y/n)\n")
     if overwrite.lower() == "y" or overwrite.lower() == "yes":
       write_csv_header()
+  else:
+    write_csv_header()
   run()
   while True:
     schedule.run_pending()
