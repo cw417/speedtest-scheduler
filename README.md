@@ -15,11 +15,13 @@ Scheduler for speedtest-cli
 Uses `speedtest-cli` to test upload/download speed at set intervals.
 Records the data in a csv file.
 
+I used this to see if my ISP was throttling my internet at certain times of day.
+
 ## Getting Started
 
 ### Prerequisites
 
-- Linux-based operating system
+- Unix-based operating system
 - speedtest-cli
 - Python 3.6+
 - Python dependencies:
@@ -29,15 +31,19 @@ Records the data in a csv file.
 
 1) Clone the github repository: `git clone https://github.com/cw417/speedtest-scheduler`
 2) Install speedtest-cli:
-   - Ubuntu: `sudo apt install speedtest-cli`
-   - Arch/Manjaro: `sudo pacman -S speedtest-cli`
+  - Ubuntu: `sudo apt install speedtest-cli`
+  - Arch/Manjaro: `sudo pacman -S speedtest-cli`
+  - MacOS:
+    ```bash
+    brew tap teamookla/speedtest
+    brew update
+    brew install speedtest --force
+    ```
 3) Install python dependencies: `pip install schedule`
 4) Run speedtest-scheduler: `python3 app.py`
   
 ## How It Works
 
 - uses the speedtest-cli application to test upload and download speed
-- the interval set by the user
-  - must be set inside the speedtest_scheduler.py file
-  - default is every day at 04:00 AM
+- the interval is set by the user
 - data is written to speedtest_stats.csv
