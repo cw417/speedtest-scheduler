@@ -57,6 +57,7 @@ def set_schedule():
     set_time = input("What time should the daily test run?\nPlease enter a time in the form of 00:00.\n")
     schedule.every().day.at(set_time).do(run)
     print(f'Set to run at {set_time} every day.')
+  return num
 
 def run():
   """Runs speedtest and appends data to csv file."""
@@ -64,14 +65,15 @@ def run():
   write_csv(stats[0],stats[1],stats[2])
 
 if __name__ == '__main__':
-  set_schedule()
+  num = set_schedule()
   if exists(path): # if csv file exists, prompt for overwrite
     overwrite = input("Overwrite previous stats file? (y/n)\n")
     if overwrite.lower() == "y" or overwrite.lower() == "yes":
       write_csv_header()
   else:
     write_csv_header()
-  run()
+  if num == "0" or num == "1":
+    run()
   while True:
     schedule.run_pending()
     time.sleep(1)
