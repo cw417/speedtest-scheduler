@@ -46,17 +46,14 @@ def run():
   write_csv(stats[0],stats[1],stats[2])
   print(stats[3])
 
-# Write CSV Header
-write_csv_header()
-
 # Perform run at set interval
-# Uncomment and replace X to run every X minutes
-# schedule.every(X).minutes.do(run) 
-# Uncomment to run once an hour
-# schedule.every().hour.do(run)
-# Uncomment and replace X with 00:00-style time to run at set time every day 
-# schedule.every().day.at('X').do(run)
+schedule.every(2).minutes.do(run)     # Uncomment and replace X to run every X minutes
+#schedule.every().hour.do(run)         # Uncomment to run once an hour
+#schedule.every().day.at('X').do(run)  # Uncomment and replace X with 00:00-style time to run at set time every day 
 
-while True:
-  schedule.run_pending()
-  time.sleep(1)
+if __name__ == '__main__':
+  write_csv_header()
+  run()
+  while True:
+    schedule.run_pending()
+    time.sleep(1)

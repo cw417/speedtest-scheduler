@@ -1,7 +1,9 @@
-# Speedtest Scheduler
+# speedtest-scheduler
+
 Scheduler for speedtest-cli
 
 ## Table of Contents
+
 1. About
 2. Getting Started
     1. Prerequisites
@@ -9,11 +11,14 @@ Scheduler for speedtest-cli
 3. How It Works
 
 ## About
-Speedtest Scheduler is a program written in python that runs the speedtest-cli application at regular intervals set by the user to report network speed stats.
 
+Uses `speedtest-cli` to test upload/download speed at set intervals.
+Records the data in a csv file.
 
 ## Getting Started
+
 ### Prerequisites
+
 - Linux-based operating system
 - speedtest-cli
 - Python 3.6+
@@ -21,10 +26,10 @@ Speedtest Scheduler is a program written in python that runs the speedtest-cli a
   - schedule
 
 ### Installing
-1) Clone the github repository: `https://github.com/cw417/speedtest-scheduler`
+
+1) Clone the github repository: `git clone https://github.com/cw417/speedtest-scheduler`
 2) Install speedtest-cli:
-   - Ubuntu/Debian: `sudo apt-get install speedtest`
-   - Fedora/RHEL: `sudo yum install speedtest`
+
    - Arch/Manjaro: `sudo pacman -S speedtest-cli`
 3) Install python dependencies: `pip install schedule`
 4) Edit file to set speedtest interval:
@@ -34,4 +39,9 @@ Speedtest Scheduler is a program written in python that runs the speedtest-cli a
 5) Run speedtest-scheduler: `python speedtest_scheduler.py`
   
 ## How It Works
-Speedtest-scheduler uses the speedtest application that interfaces with speedtest.net to test your current download and upload speeds at an interval set by the user, and writes these values to a CSV file for easy monitoring. The interval set by the user can be a set number of minutes or hours, or it can be set up to run every day at a specified time.
+
+- uses the speedtest-cli application to test upload and download speed
+- the interval set by the user
+  - must be set inside the speedtest_scheduler.py file
+  - default is every day at 04:00 AM
+- data is written to speedtest_stats.csv
