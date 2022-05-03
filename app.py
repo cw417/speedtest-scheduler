@@ -36,10 +36,10 @@ def write_csv(date,dl,ul):
 
 def set_schedule():
   """
-  Prompts for user input, sets appropriate schedule.
-  0 = every __ minutes
-  1 = every hour
-  2 = set time of day
+  Prompts for user input, sets appropriate schedule.\n
+  0 = every __ minutes\n
+  1 = every hour\n
+  2 = set time of day\n
   Defaults to 2 if anything other than 0 or 1 is entered.
   """
   num = input("Select mode: 0 = every __ minutes; 1 = every hour; 2 (default) = set time of day:\n")
