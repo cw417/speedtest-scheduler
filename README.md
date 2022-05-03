@@ -29,14 +29,10 @@ Records the data in a csv file.
 
 1) Clone the github repository: `git clone https://github.com/cw417/speedtest-scheduler`
 2) Install speedtest-cli:
-
+   - Ubuntu: `sudo apt install speedtest-cli`
    - Arch/Manjaro: `sudo pacman -S speedtest-cli`
 3) Install python dependencies: `pip install schedule`
-4) Edit file to set speedtest interval:
-   - Use text editor of choice (nano, vim, gedit, pycharm, etc...) to open `speedtest_scheduler.py`
-   - Navigate to commented out section near bottom of file, and uncomment/set your desired interval
-   - Save the edited file and exit
-5) Run speedtest-scheduler: `python speedtest_scheduler.py`
+4) Run speedtest-scheduler: `python3 app.py`
   
 ## How It Works
 
