@@ -47,9 +47,9 @@ def run():
   print(stats[3])
 
 # Perform run at set interval
-schedule.every(2).minutes.do(run)     # Uncomment and replace X to run every X minutes
+#schedule.every().minutes.do(run)     # Uncomment and replace X to run every X minutes
 #schedule.every().hour.do(run)         # Uncomment to run once an hour
-#schedule.every().day.at('X').do(run)  # Uncomment and replace X with 00:00-style time to run at set time every day 
+schedule.every().day.at('04:00').do(run)  # Uncomment and replace X with 00:00-style time to run at set time every day 
 
 if __name__ == '__main__':
   write_csv_header()
