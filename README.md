@@ -31,7 +31,7 @@ I used this to see if my ISP was throttling my internet at certain times of day.
 
 1) Clone the github repository: `git clone https://github.com/cw417/speedtest-scheduler`
 2) Install speedtest-cli:
-  - Ubuntu: `sudo apt install speedtest-cli`
+  - Ubuntu/Debian: `sudo apt install speedtest-cli`
   - Arch/Manjaro: `sudo pacman -S speedtest-cli`
   - MacOS:
     ```bash
