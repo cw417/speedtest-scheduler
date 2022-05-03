@@ -8,7 +8,6 @@ Scheduler for speedtest-cli
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
-- [How It Works](#how-it-works)
 
 ## About
 
