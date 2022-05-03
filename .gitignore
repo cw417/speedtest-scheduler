@@ -1,2 +1,4 @@
+dist/
 env/
+src/speedtest_scheduler.egg-info
 stats.csv

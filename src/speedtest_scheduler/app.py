@@ -64,7 +64,7 @@ def run():
   stats = run_speedtest()
   write_csv(stats[0],stats[1],stats[2])
 
-if __name__ == '__main__':
+def main():
   num = set_schedule()
   if exists(path): # if csv file exists, prompt for overwrite
     overwrite = input("Overwrite previous stats file? (y/n)\n")
@@ -77,3 +77,6 @@ if __name__ == '__main__':
   while True:
     schedule.run_pending()
     time.sleep(1)
+
+if __name__ == '__main__':
+  main()
